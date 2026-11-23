@@ -1,0 +1,40 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shivam-devops-portfolio
+    ports:
+      - "${PORT:-3000}:3000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      APP_URL: ${APP_URL:-http://localhost:3000}
+      NEXT_PUBLIC_WEB3FORMS_KEY: ${NEXT_PUBLIC_WEB3FORMS_KEY:-}
+      NEXT_PUBLIC_OWNER_MASTER_KEY: ${NEXT_PUBLIC_OWNER_MASTER_KEY:-}
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    networks:
+      - portfolio_net
+
+networks:
+  portfolio_net:
+    driver: bridge

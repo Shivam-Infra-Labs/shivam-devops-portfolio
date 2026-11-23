@@ -1,0 +1,656 @@
+{
+  "profile": {
+    "name": "Shivam Kumar Sinha",
+    "monogram": "SK",
+    "photoUrl": "/profile.jpg",
+    "headline": "DevOps & Cloud Infrastructure",
+    "subheadline": "Hands-on containerization with Docker and Kubernetes, automated CI/CD smoke tests via GitHub Actions, and Layer-3 network troubleshooting.",
+    "availabilityActive": true,
+    "availabilityBadge": "Available for DevOps Roles & Freelance",
+    "availabilityLine": "India — Open to Remote DevOps/Cloud Roles & Freelance Projects",
+    "location": "India",
+    "email": "mrs228891@gmail.com",
+    "githubUrl": "https://github.com/Shivam-Infra-Labs",
+    "linkedinUrl": "https://www.linkedin.com/in/shivam-kumar-sinha-0a9248308/",
+    "socialLinks": [
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/Shivam-Infra-Labs",
+        "platform": "github",
+        "visible": true
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/shivam-kumar-sinha-0a9248308/",
+        "platform": "linkedin",
+        "visible": true
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "url": "mailto:mrs228891@gmail.com",
+        "platform": "email",
+        "visible": true
+      }
+    ]
+  },
+  "coreStack": [
+    {
+      "id": "docker",
+      "name": "Docker",
+      "category": "Containers",
+      "tooltip": "Multi-stage Dockerfiles, Compose networks & persistent volumes",
+      "iconKey": "docker",
+      "visible": true
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes",
+      "category": "Orchestration",
+      "tooltip": "Local Kind clusters, Deployments, Services & ConfigMaps",
+      "iconKey": "kubernetes",
+      "visible": true
+    },
+    {
+      "id": "github-actions",
+      "name": "GitHub Actions",
+      "category": "CI/CD",
+      "tooltip": "Automated container builds, Kind spin-up & HTTP smoke tests",
+      "iconKey": "github-actions",
+      "visible": true
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "category": "Systems",
+      "tooltip": "Ubuntu/Debian administration, systemd, permissions & shell scripts",
+      "iconKey": "linux",
+      "visible": true
+    },
+    {
+      "id": "nginx",
+      "name": "Nginx",
+      "category": "Networking",
+      "tooltip": "Reverse proxy routing, upstream load balancing & port mapping",
+      "iconKey": "nginx",
+      "visible": true
+    },
+    {
+      "id": "prometheus",
+      "name": "Prometheus",
+      "category": "Observability",
+      "tooltip": "Metrics scraping paired with Grafana cluster dashboards",
+      "iconKey": "prometheus",
+      "visible": true
+    },
+    {
+      "id": "cisco",
+      "name": "Cisco OSPF",
+      "category": "L2/L3 Routing",
+      "tooltip": "Multi-area OSPF, VLANs, SVI gateways & static ISP routes",
+      "iconKey": "cisco",
+      "visible": true
+    }
+  ],
+  "featuredProject": {
+    "id": "mean-stack-example",
+    "visible": true,
+    "kicker": "Featured Infrastructure Project",
+    "title": "MEAN Stack Kubernetes Deployment",
+    "repoName": "Shivam-Infra-Labs/mean-stack-example",
+    "repoUrl": "https://github.com/Shivam-Infra-Labs/mean-stack-example",
+    "summary": "Deployed a MEAN app on Kubernetes locally with Kind, automated build and smoke tests with GitHub Actions, and monitored it with Prometheus and Grafana.",
+    "stackTags": [
+      "Kubernetes (Kind)",
+      "Docker",
+      "GitHub Actions",
+      "Prometheus",
+      "Grafana",
+      "MongoDB"
+    ],
+    "contributions": [
+      "Containerized the Angular frontend and Node/Express API with multi-service Kubernetes manifests, ClusterIP/NodePort routing, and stateful MongoDB persistence inside a local Kind cluster.",
+      "Built a GitHub Actions CI workflow that builds Docker images, boots an ephemeral Kind cluster on every push, deploys manifests, and runs automated HTTP endpoint smoke tests.",
+      "Configured Prometheus scrape targets and Grafana dashboards to inspect pod health, container CPU/memory usage, and service availability."
+    ],
+    "architectureNodes": [
+      {
+        "id": "ci",
+        "stage": "01. Continuous Integration",
+        "title": "GitHub Actions CI",
+        "subtitle": "Build & Smoke Test Runner",
+        "detail": "Builds container images, boots Kind cluster in CI, applies manifests, and verifies HTTP 200 responses.",
+        "accent": "cyan"
+      },
+      {
+        "id": "registry",
+        "stage": "02. Container Packaging",
+        "title": "Docker Images",
+        "subtitle": "Frontend & Backend Builds",
+        "detail": "Optimized Dockerfiles for the Angular UI and Express API loaded directly into Kind nodes.",
+        "accent": "sky"
+      },
+      {
+        "id": "cluster",
+        "stage": "03. Orchestration",
+        "title": "Kind K8s Cluster",
+        "subtitle": "Frontend · Backend · MongoDB",
+        "detail": "Kubernetes Deployments & Services isolating Angular UI, Express REST API, and MongoDB storage.",
+        "accent": "emerald"
+      },
+      {
+        "id": "observability",
+        "stage": "04. Monitoring",
+        "title": "Prometheus & Grafana",
+        "subtitle": "Metrics & Dashboards",
+        "detail": "Scrapes cluster and container metrics to visualize resource utilization and pod uptime.",
+        "accent": "cyan"
+      }
+    ],
+    "caseStudy": {
+      "overview": "A reproducible local Kubernetes deployment pipeline for a full MEAN stack application—proving end-to-end containerization, automated CI cluster validation, and cluster observability without cloud spend.",
+      "problem": "Running multi-tier MEAN applications locally often breaks across machines due to Node version drift, unverified Kubernetes YAML edits, and zero visibility into pod resource consumption.",
+      "implementation": [
+        "Wrote dedicated Dockerfiles for the Angular client and Express API with explicit environment configuration.",
+        "Authored Kubernetes Deployment, Service, and Secret/ConfigMap manifests tailored for Kind (Kubernetes in Docker).",
+        "Automated full cluster provisioning inside GitHub Actions using kind-action, executing rollout status checks and curl smoke tests before marking builds green.",
+        "Integrated Prometheus and Grafana manifests to scrape node/pod telemetry and surface resource graphs locally."
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/",
+          "purpose": "CI pipeline building images, spinning up Kind, and running deployment smoke tests",
+          "repoFileUrl": "https://github.com/Shivam-Infra-Labs/mean-stack-example/tree/main/.github/workflows"
+        },
+        {
+          "path": "k8s/",
+          "purpose": "Kubernetes Deployments, Services, and MongoDB manifests for local cluster orchestration",
+          "repoFileUrl": "https://github.com/Shivam-Infra-Labs/mean-stack-example/tree/main/k8s"
+        },
+        {
+          "path": "Dockerfile & compose.yaml",
+          "purpose": "Container definitions for reproducible service packaging across local and CI environments",
+          "repoFileUrl": "https://github.com/Shivam-Infra-Labs/mean-stack-example"
+        },
+        {
+          "path": "monitoring/",
+          "purpose": "Prometheus scrape configuration and Grafana visualization setup",
+          "repoFileUrl": "https://github.com/Shivam-Infra-Labs/mean-stack-example"
+        }
+      ],
+      "outcome": "Every commit is automatically validated against a real Kubernetes control plane in GitHub Actions, eliminating broken manifest merges and providing repeatable local setup.",
+      "decisions": [
+        {
+          "title": "Multi-Stage Alpine Containers",
+          "choice": "Separated build dependencies from runtime stages using Alpine base images.",
+          "tradeoff": "Requires explicit native build deps in the builder stage, but shrinks image footprint and OS package attack surface significantly."
+        },
+        {
+          "title": "Kind Cluster + HTTP Smoke Gate in CI",
+          "choice": "Booted an ephemeral Kubernetes-in-Docker cluster inside GitHub Actions on every push.",
+          "tradeoff": "Adds ~90s to CI runtime compared to unit tests alone, but catches broken Service selectors, image pulls, and readiness issues before merge."
+        },
+        {
+          "title": "Internal ClusterIP for MongoDB",
+          "choice": "Kept MongoDB strictly on ClusterIP without NodePort exposure.",
+          "tradeoff": "Direct laptop GUI connections require kubectl port-forward, while preventing accidental database exposure."
+        }
+      ]
+    }
+  },
+  "engineeringWork": [
+    {
+      "id": "lamp-to-docker",
+      "anchorId": "engineering-work",
+      "visible": true,
+      "category": "DevOps",
+      "kicker": "Migration Case Study",
+      "title": "From LAMP to Docker Compose",
+      "repoName": "LAMP Stack → Dockerized Grocery Store",
+      "summary": "Refactored a manually provisioned Linux, Apache, MySQL, and PHP grocery store deployment into isolated, reproducible Docker Compose services.",
+      "highlights": [
+        "Replaced manual Apache virtual host and MySQL daemon setup on bare Linux with declarative compose.yaml services.",
+        "Isolated PHP application, web server, and database tiers onto dedicated bridge networks with persistent MySQL volumes.",
+        "Eliminated host OS dependency conflicts so the full store boots cleanly with a single compose command."
+      ],
+      "stackTags": [
+        "Docker Compose",
+        "Apache",
+        "MySQL",
+        "PHP",
+        "Linux"
+      ],
+      "primaryUrl": "https://github.com/Shivam-Infra-Labs/Dockerized-grocery-store",
+      "primaryLabel": "View Dockerized Repo",
+      "secondaryUrl": "https://github.com/Shivam-Infra-Labs/-Grocery-Store-Deployment-using-LAMP-Stack-DevOps-Project-",
+      "secondaryLabel": "View LAMP Repo",
+      "liveUrl": "",
+      "liveLabel": "",
+      "decisions": [
+        {
+          "title": "Isolated Docker Bridge Networks",
+          "choice": "Separated web/app traffic from the MySQL database on dedicated bridge networks with zero host port mapping on DB.",
+          "tradeoff": "Admin DB tools connect via container exec/tunnel instead of localhost:3306, drastically reducing accidental host exposure."
+        },
+        {
+          "title": "Named Persistent Volume for MySQL",
+          "choice": "Mounted /var/lib/mysql to a managed Docker named volume instead of host bind mounts.",
+          "tradeoff": "Eliminates Linux UID/file-permission drift across laptops while persisting state across container recreations."
+        }
+      ]
+    },
+    {
+      "id": "ccna-network-lab",
+      "visible": true,
+      "category": "Networking",
+      "kicker": "Hands-on Networking Lab",
+      "title": "Enterprise CCNA Network Lab",
+      "repoName": "Shivam-Infra-Labs/-Networking-Labs",
+      "summary": "Designed and verified multi-branch enterprise topologies in Cisco Packet Tracer covering dynamic Layer-3 routing, VLAN isolation, and WAN uplink paths.",
+      "highlights": [
+        "Configured multi-area OSPF dynamic routing across core and distribution routers with deterministic path selection.",
+        "Implemented static default routing toward simulated ISP gateways and verified end-to-end reachability.",
+        "Segmented department traffic using 802.1Q VLANs, trunk links, and Layer-3 SVI inter-VLAN gateways."
+      ],
+      "stackTags": [
+        "Cisco Packet Tracer",
+        "Multi-Area OSPF",
+        "VLANs",
+        "Layer-3 SVI",
+        "Static Routing"
+      ],
+      "primaryUrl": "https://github.com/Shivam-Infra-Labs/-Networking-Labs",
+      "primaryLabel": "View Lab",
+      "liveUrl": "",
+      "liveLabel": "",
+      "decisions": [
+        {
+          "title": "Multi-Area OSPF Segmentation",
+          "choice": "Partitioned branch routers into non-backbone areas anchored to Area 0 instead of one flat OSPF area.",
+          "tradeoff": "Requires careful ABR summarization planning, but isolates topology/LSA recalculations to the affected branch."
+        },
+        {
+          "title": "Layer-3 SVI Inter-VLAN Gateways",
+          "choice": "Terminated VLAN gateways on multilayer switch SVIs rather than router-on-a-stick subinterfaces.",
+          "tradeoff": "Higher hardware feature requirement, while avoiding single-link hairpin congestion between internal VLANs."
+        }
+      ]
+    },
+    {
+      "id": "gyan-vatika-library",
+      "visible": true,
+      "category": "Full-Stack",
+      "kicker": "Full-Stack & Containerization",
+      "title": "Gyan Vatika Library Web App",
+      "repoName": "Shivam-Infra-Labs/gyan-vatika-library",
+      "summary": "Built and containerized a Next.js library management application featuring QR-code student attendance logging and real-time seat tracking.",
+      "highlights": [
+        "Developed responsive Next.js frontend views for student check-in, seat availability grids, and attendance records.",
+        "Containerized the web application with Docker for consistent local testing and streamlined deployment.",
+        "Integrated Firebase data workflows to support QR-code scan check-ins and live study seat allocation."
+      ],
+      "stackTags": [
+        "Next.js",
+        "Docker",
+        "Firebase",
+        "QR Attendance",
+        "TypeScript"
+      ],
+      "primaryUrl": "https://github.com/Shivam-Infra-Labs/gyan-vatika-library",
+      "primaryLabel": "View Repository",
+      "liveUrl": "",
+      "liveLabel": "",
+      "decisions": [
+        {
+          "title": "Dockerized Next.js Standalone Build",
+          "choice": "Packaged Next.js into a Docker container rather than relying on host-installed Node versions.",
+          "tradeoff": "Adds a container build step, but ensures consistent Node runtime and predictable local-to-production behavior."
+        },
+        {
+          "title": "Managed Firebase Sync for QR Attendance",
+          "choice": "Used Firebase for real-time seat occupancy updates instead of operating a dedicated WebSocket server.",
+          "tradeoff": "Ties persistence to Firebase rules, but removes stateful socket scaling overhead at ₹0 cost."
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "dockerize-app",
+      "visible": true,
+      "number": "01",
+      "title": "Dockerize My Application",
+      "summary": "Convert an existing Node.js, PHP, Python, or Next.js application from manual host setup into a clean, portable container workflow.",
+      "deliverables": [
+        "Production-ready Dockerfile",
+        "compose.yaml service definition",
+        ".dockerignore & .env.example templates",
+        "Step-by-step local setup guide"
+      ],
+      "proofLabel": "Proof: From LAMP to Docker Compose",
+      "proofAnchor": "#engineering-work",
+      "ctaLabel": "Request Quote",
+      "prefillStack": "Node.js / PHP / Next.js + Database",
+      "prefillHelp": "Looking to containerize my existing application with a clean Dockerfile, compose.yaml, .dockerignore, .env.example, and local onboarding docs."
+    },
+    {
+      "id": "multi-container-env",
+      "visible": true,
+      "number": "02",
+      "title": "Set Up a Multi-Container Environment",
+      "summary": "Architect an isolated multi-service stack with reverse proxy routing, persistent database storage, and automated CI build smoke tests.",
+      "deliverables": [
+        "Reverse proxy routing (Nginx)",
+        "Isolated service bridge networks",
+        "Persistent database volumes",
+        "GitHub Actions CI smoke tests"
+      ],
+      "proofLabel": "Proof: MEAN Stack Deployment",
+      "proofAnchor": "#projects",
+      "ctaLabel": "Get Architecture Plan",
+      "prefillStack": "Multi-service Web App + Reverse Proxy + DB",
+      "prefillHelp": "Need help setting up a multi-container environment with Nginx reverse proxy routing, isolated service networks, persistent volumes, and CI smoke tests."
+    }
+  ],
+  "contactSettings": {
+    "recipientEmail": "mrs228891@gmail.com",
+    "web3FormsKey": "",
+    "responseNote": "Direct email response typically within 24 hours."
+  },
+  "about": {
+    "intro": "I am Shivam Kumar Sinha, a Computer Engineering diploma graduate focused on building reliable container environments, automated CI checks, and well-structured Layer-2/Layer-3 networks.",
+    "journey": "My path into DevOps started from networking fundamentals—configuring VLANs, OSPF routing tables, and Linux servers from scratch. Moving from bare-metal LAMP setups into Docker Compose, Kubernetes with Kind, and GitHub Actions taught me how clean infrastructure definitions prevent deployment surprises.",
+    "highlights": [
+      "Strong grounding in TCP/IP, subnetting, OSPF, and Linux troubleshooting",
+      "Practical experience refactoring manual server setups into declarative containers",
+      "Focused on verifiable engineering work backed by public repositories"
+    ]
+  },
+  "educationList": [
+    {
+      "id": "diploma-ce",
+      "visible": true,
+      "degree": "3-Year Diploma in Computer Engineering",
+      "institution": "Polytechnic / Technical Board",
+      "years": "3-Year Program",
+      "details": "Core foundation in Computer Networks, Operating Systems, Linux Administration, and Database Management Systems.",
+      "focusAreas": [
+        "Computer Networks",
+        "Operating Systems",
+        "Linux Administration",
+        "Database Management Systems"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": "ccna-track",
+      "visible": true,
+      "title": "CCNA Routing & Switching Fundamentals",
+      "issuer": "Cisco Networking Academy / Self-Paced Lab Track",
+      "year": "2025",
+      "category": "Networking",
+      "summary": "Hands-on Packet Tracer labs covering multi-area OSPF, VLAN trunking, Layer-3 SVI gateways, and static ISP routing.",
+      "proofUrl": "https://github.com/Shivam-Infra-Labs/-Networking-Labs",
+      "proofLabel": "Verify via Lab Repo"
+    },
+    {
+      "id": "container-eng",
+      "visible": true,
+      "title": "Linux, Docker & Kubernetes Container Engineering",
+      "issuer": "Shivam Infra Labs Verified Implementation",
+      "year": "2026",
+      "category": "Containers & CI",
+      "summary": "End-to-end MEAN stack containerization, Kind Kubernetes orchestration, GitHub Actions smoke tests, and Prometheus/Grafana metrics.",
+      "proofUrl": "https://github.com/Shivam-Infra-Labs/mean-stack-example",
+      "proofLabel": "Verify Implementation"
+    }
+  ],
+  "resume": {
+    "summary": "DevOps & Cloud Infrastructure practitioner with a 3-Year Diploma in Computer Engineering and hands-on experience containerizing full-stack applications with Docker and Kubernetes (Kind), automating build and HTTP smoke tests via GitHub Actions, monitoring workloads with Prometheus and Grafana, and troubleshooting Layer-2/Layer-3 Cisco networks.",
+    "skillGroups": [
+      {
+        "group": "Containers & Orchestration",
+        "items": [
+          "Docker",
+          "Docker Compose",
+          "Kubernetes (Kind)",
+          "Pod & Service Manifests",
+          "Persistent Volumes"
+        ]
+      },
+      {
+        "group": "CI/CD & Observability",
+        "items": [
+          "GitHub Actions",
+          "Automated Smoke Tests",
+          "Prometheus",
+          "Grafana",
+          "Nginx Reverse Proxy"
+        ]
+      },
+      {
+        "group": "Networking & Systems",
+        "items": [
+          "Linux Administration",
+          "Multi-Area OSPF",
+          "VLANs & 802.1Q Trunking",
+          "Layer-3 SVI Gateways",
+          "Static Default Routing"
+        ]
+      },
+      {
+        "group": "Application & Data Stack",
+        "items": [
+          "Next.js",
+          "TypeScript",
+          "Node.js / Express",
+          "MongoDB",
+          "MySQL",
+          "Firebase",
+          "Apache / PHP"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "MEAN Stack Kubernetes Deployment (mean-stack-example)",
+        "subtitle": "Kubernetes (Kind) · Docker · GitHub Actions · Prometheus · Grafana",
+        "repoUrl": "https://github.com/Shivam-Infra-Labs/mean-stack-example",
+        "bullets": [
+          "Deployed frontend, backend API, and MongoDB services inside a local Kind Kubernetes cluster using declarative manifests.",
+          "Automated container builds, ephemeral Kind provisioning, and HTTP smoke testing in GitHub Actions.",
+          "Configured Prometheus metric scraping and Grafana dashboards for workload visibility."
+        ]
+      },
+      {
+        "title": "LAMP to Docker Compose Migration",
+        "subtitle": "Docker Compose · Apache · MySQL · PHP · Linux",
+        "repoUrl": "https://github.com/Shivam-Infra-Labs/Dockerized-grocery-store",
+        "bullets": [
+          "Migrated a manually configured Linux/Apache/MySQL/PHP grocery store deployment into isolated Docker Compose containers.",
+          "Established persistent MySQL volumes and clean service networking for single-command local startup."
+        ]
+      },
+      {
+        "title": "Enterprise CCNA Network Lab (-Networking-Labs)",
+        "subtitle": "Cisco Packet Tracer · Multi-Area OSPF · VLANs · L3 SVI",
+        "repoUrl": "https://github.com/Shivam-Infra-Labs/-Networking-Labs",
+        "bullets": [
+          "Built and tested multi-area OSPF dynamic routing, static default ISP routing, VLAN segmentation, and Layer-3 SVI gateways."
+        ]
+      },
+      {
+        "title": "Gyan Vatika Library Web App",
+        "subtitle": "Next.js · Docker · Firebase",
+        "repoUrl": "https://github.com/Shivam-Infra-Labs/gyan-vatika-library",
+        "bullets": [
+          "Built Next.js frontend and containerized the application with Docker alongside Firebase QR-code student attendance and seat tracking."
+        ]
+      }
+    ]
+  },
+  "incidentScenarios": [
+    {
+      "id": "prometheus-kind-unreachable",
+      "visible": true,
+      "title": "Prometheus Endpoint Unreachable from Laptop (Kind K8s)",
+      "category": "Kubernetes",
+      "severity": "Flagship Incident",
+      "symptom": "Prometheus pod is running inside the local Kubernetes (Kind) cluster, but opening the Prometheus endpoint from my laptop browser refuses connection / times out.",
+      "triageOptions": [
+        {
+          "id": "pods",
+          "label": "Pod Status (kubectl get pods)",
+          "command": "kubectl get pods -n monitoring -o wide",
+          "output": "NAME                                  READY   STATUS    RESTARTS   AGE   IP           NODE\nprometheus-server-6d9c7f8b4c-x2k9p    1/1     Running   0          14m   10.244.0.9   kind-control-plane",
+          "insight": "The pod is healthy (1/1 Running with 0 restarts). This rules out image pull failures or CrashLoopBackOff—focus next on how traffic enters the Kind node.",
+          "isPrimaryClue": false
+        },
+        {
+          "id": "svc",
+          "label": "Service Type & Port Mapping (kubectl get svc)",
+          "command": "kubectl get svc -n monitoring",
+          "output": "NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE\nprometheus-server   ClusterIP   10.96.42.18     <none>        9090/TCP   14m",
+          "insight": "Key finding: Service TYPE is ClusterIP (10.96.42.18). ClusterIP is only routable inside the Kind Docker bridge network—your laptop browser on localhost cannot reach pod or ClusterIP addresses directly.",
+          "isPrimaryClue": true
+        },
+        {
+          "id": "logs",
+          "label": "Application Logs (kubectl logs)",
+          "command": "kubectl logs -n monitoring deploy/prometheus-server --tail=5",
+          "output": "level=info msg=\"TSDB started\"\nlevel=info msg=\"Completed loading of configuration file\" filename=/etc/prometheus/prometheus.yml\nlevel=info msg=\"Server is ready to receive web requests.\" address=:9090",
+          "insight": "Prometheus itself is listening on port 9090 and ready for HTTP requests. The blockage is strictly at the Kubernetes Service / Kind host-port boundary.",
+          "isPrimaryClue": false
+        }
+      ],
+      "rootCause": "The Prometheus Kubernetes Service was created with type ClusterIP, which allocates an internal virtual IP reachable only inside the Kind node network. Additionally, Kind clusters run inside Docker containers and do not expose NodePorts to the laptop unless extraPortMappings are declared in the Kind cluster config.",
+      "fixes": [
+        {
+          "id": "port-forward",
+          "label": "Fix A — Immediate Local Debug Fix",
+          "command": "kubectl port-forward -n monitoring svc/prometheus-server 9090:9090",
+          "explanation": "Creates an instant tunnel through the Kubernetes API server from localhost:9090 on your laptop to port 9090 on the ClusterIP service—ideal for quick debugging without recreating the Kind cluster."
+        },
+        {
+          "id": "nodeport-kind",
+          "label": "Fix B — Persistent Kind Cluster Fix",
+          "command": "# kind-config.yaml\nkind: Cluster\napiVersion: kind.x-k8s.io/v1alpha4\nnodes:\n  - role: control-plane\n    extraPortMappings:\n      - containerPort: 30090\n        hostPort: 9090\n        protocol: TCP\n\n# prometheus-svc.yaml -> spec.type: NodePort, spec.ports[0].nodePort: 30090",
+          "explanation": "Maps host port 9090 on your laptop directly to Kind node port 30090, backed by a NodePort Service—survives terminal closes and works consistently in local dev."
+        }
+      ],
+      "verificationCommand": "curl -I http://localhost:9090/targets",
+      "verificationOutput": "HTTP/1.1 200 OK\nContent-Type: text/html; charset=utf-8\n\n# Prometheus UI /targets confirms scrape endpoints state=\"UP\"",
+      "interviewSummary": "When a pod is Running 1/1 in Kind but unreachable from the host browser, always inspect Service type and host port mappings before restarting pods. ClusterIP is strictly cluster-internal; in Kind, either tunnel temporarily via kubectl port-forward or pair a NodePort service with extraPortMappings in kind-config.yaml."
+    },
+    {
+      "id": "ospf-stuck-exstart",
+      "visible": true,
+      "title": "OSPF Neighbor Stuck in EXSTART / INIT State",
+      "category": "Networking",
+      "severity": "L3 Routing",
+      "symptom": "Two core Cisco routers across a point-to-point GigabitEthernet link fail to exchange routing tables; OSPF adjacency stalls in EXSTART or INIT instead of reaching FULL.",
+      "triageOptions": [
+        {
+          "id": "ospf-nbr",
+          "label": "Neighbor Table (show ip ospf neighbor)",
+          "command": "R1# show ip ospf neighbor",
+          "output": "Neighbor ID     Pri   State           Dead Time   Address         Interface\n10.255.0.2        1   EXSTART/DR      00:00:34    10.10.12.2      GigabitEthernet0/0",
+          "insight": "EXSTART indicates Layer-3 hello discovery succeeded, but Database Description (DBD) packets are failing negotiation—most commonly caused by an interface MTU mismatch.",
+          "isPrimaryClue": true
+        },
+        {
+          "id": "intf-mtu",
+          "label": "Interface MTU & Area (show ip interface)",
+          "command": "R1# show interfaces GigabitEthernet0/0 | include MTU\nR2# show interfaces GigabitEthernet0/0 | include MTU",
+          "output": "R1 GigabitEthernet0/0: MTU 1500 bytes, BW 1000000 Kbit\nR2 GigabitEthernet0/0: MTU 1400 bytes, BW 1000000 Kbit",
+          "insight": "Confirmed MTU mismatch (1500 on R1 vs 1400 on R2). OSPF checks interface MTU inside DBD headers and refuses to advance past EXSTART when values differ.",
+          "isPrimaryClue": true
+        },
+        {
+          "id": "ospf-intf",
+          "label": "OSPF Parameters (show ip ospf interface)",
+          "command": "R1# show ip ospf interface GigabitEthernet0/0",
+          "output": "GigabitEthernet0/0 is up, line protocol is up\n  Internet Address 10.10.12.1/30, Area 0, Attached via Network Statement\n  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5",
+          "insight": "Area 0 and Hello/Dead timers (10/40) are valid; verify R2 matches Area 0 on the same subnet as well.",
+          "isPrimaryClue": false
+        }
+      ],
+      "rootCause": "Interface MTU mismatch between R1 (1500 bytes) and R2 (1400 bytes) prevents OSPF DBD negotiation from completing during EXSTART. (In cases stuck in INIT, mismatched OSPF area IDs or one-way ACL blocking multicast 224.0.0.5 are the primary causes.)",
+      "fixes": [
+        {
+          "id": "align-mtu",
+          "label": "Recommended Fix — Align Interface MTU & Area",
+          "command": "R2(config)# interface GigabitEthernet0/0\nR2(config-if)# ip mtu 1500\nR2(config-if)# router ospf 1\nR2(config-router)# network 10.10.12.0 0.0.0.3 area 0",
+          "explanation": "Standardizes IP MTU to 1500 bytes across both link endpoints and ensures matching Area 0 membership so DBD exchange completes cleanly."
+        },
+        {
+          "id": "mtu-ignore",
+          "label": "Temporary Workaround — Bypass MTU Check",
+          "command": "R1(config-if)# ip ospf mtu-ignore\nR2(config-if)# ip ospf mtu-ignore",
+          "explanation": "Instructs OSPF to ignore MTU mismatches during DBD negotiation when upstream carrier tunneling restricts physical MTU."
+        }
+      ],
+      "verificationCommand": "R1# show ip ospf neighbor",
+      "verificationOutput": "Neighbor ID     Pri   State           Dead Time   Address         Interface\n10.255.0.2        1   FULL/DR         00:00:37    10.10.12.2      GigabitEthernet0/0",
+      "interviewSummary": "Stuck OSPF neighbors map directly to protocol phases: INIT means one-way hello or ACL/area issue; EXSTART/EXCHANGE almost always signals an MTU mismatch in DBD packets. Verify with show ip ospf neighbor and show interfaces, align ip mtu on both sides, and confirm FULL state."
+    },
+    {
+      "id": "nginx-compose-502",
+      "visible": true,
+      "title": "502 Bad Gateway on Nginx + Docker Compose",
+      "category": "Containers",
+      "severity": "Reverse Proxy",
+      "symptom": "Docker Compose stack starts without errors, but requests to http://localhost/api/health through Nginx return HTTP 502 Bad Gateway.",
+      "triageOptions": [
+        {
+          "id": "nginx-logs",
+          "label": "Proxy Error Logs (docker compose logs nginx)",
+          "command": "docker compose logs nginx --tail=5",
+          "output": "[error] 29#29: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: \"GET /api/health HTTP/1.1\", upstream: \"http://127.0.0.1:5000/api/health\"",
+          "insight": "Nginx is attempting to reach upstream 127.0.0.1:5000—inside the Nginx container itself, where no API process is running.",
+          "isPrimaryClue": true
+        },
+        {
+          "id": "compose-ps",
+          "label": "Container & Port Check (docker compose ps)",
+          "command": "docker compose ps",
+          "output": "NAME          IMAGE          COMMAND                  SERVICE   STATUS         PORTS\napp-api-1     node:20        \"node server.js\"         api       Up 2 minutes   3000/tcp\napp-nginx-1   nginx:alpine   \"/docker-entrypoint...\"  nginx     Up 2 minutes   0.0.0.0:80->80/tcp",
+          "insight": "Two bugs revealed: the API service name is 'api' (not localhost), and it listens on port 3000 internally (not 5000).",
+          "isPrimaryClue": true
+        },
+        {
+          "id": "dns-check",
+          "label": "Docker DNS Resolution (getent hosts api)",
+          "command": "docker compose exec nginx getent hosts api",
+          "output": "172.18.0.3      api",
+          "insight": "Docker Compose internal DNS resolves service name 'api' to 172.18.0.3 on the shared bridge network.",
+          "isPrimaryClue": false
+        }
+      ],
+      "rootCause": "Two configuration mismatches in nginx.conf and compose.yaml: proxy_pass pointed to localhost:5000 (which refers to Nginx's own container loopback) instead of the Docker Compose service DNS name 'api' on its actual internal listening port 3000.",
+      "fixes": [
+        {
+          "id": "nginx-upstream",
+          "label": "Fix nginx.conf Upstream & Reload",
+          "command": "# nginx.conf\nlocation /api/ {\n  proxy_pass http://api:3000;\n  proxy_set_header Host $host;\n  proxy_set_header X-Real-IP $remote_addr;\n}\n\n# Apply\ndocker compose up -d --force-recreate nginx",
+          "explanation": "Routes traffic across Docker's internal bridge network using the Compose service name (api) and matching container port (3000)."
+        }
+      ],
+      "verificationCommand": "curl -i http://localhost/api/health",
+      "verificationOutput": "HTTP/1.1 200 OK\nServer: nginx/1.25.5\n{\"status\":\"ok\",\"service\":\"api\"}",
+      "interviewSummary": "A 502 Bad Gateway in Docker Compose usually means Nginx cannot connect to the upstream socket. Using localhost inside nginx.conf points to the Nginx container itself; always target the Compose service name and its internal container port on a shared bridge network."
+    }
+  ],
+  "generatorSettings": {
+    "defaultBaseImage": "node:20-alpine",
+    "defaultPort": 3000,
+    "enableHealthcheck": true,
+    "proPlanLabel": "Pro Infra Template Pack",
+    "proPriceInr": "₹499",
+    "proPriceUsd": "$9",
+    "paymentUrl": "mailto:mrs228891@gmail.com?subject=Pro%20Infra%20Template%20Pack"
+  }
+}
